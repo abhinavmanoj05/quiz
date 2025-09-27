@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Answer the Quiz</h1>
+    <form method="post" id="quizForm">
+        <div>
+            <label>Question {{ qnum+1 }} of {{ total }}</label><br>
+            <strong>{{ question.question }}</strong><br>
+            {% for opt in question.options %}
+                <input type="radio" name="answer" value="{{ loop.index }}" {% if answer == loop.index|string %}checked{% endif %} required>
+                <label>{{ opt }}</label><br>
+            {% endfor %}
+        </div>
+        <div style="margin-top:20px;">
+            <span id="timer" style="font-weight:bold;color:red;">10</span> seconds left<br>
+            {% if not is_first %}
+                <button type="submit" name="prev">Previous</button>
+            {% endif %}
+            {% if not is_last %}
+                <button type="submit" name="next" id="nextBtn">Next</button>
+            {% else %}
+                <button type="submit" name="submit" id="submitBtn">Submit Answers</button>
+            {% endif %}
+        </div>
+    </form>
+    <script>
+        let timeLeft = 10;
+        const timerSpan = document.getElementById('timer');
+        const form = document.getElementById('quizForm');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        let timer = setInterval(function() {
+            timeLeft--;
+            timerSpan.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                // Auto-submit form
+                if (nextBtn) {
+                    nextBtn.click();
+                } else if (submitBtn) {
+                    submitBtn.click();
+                } else {
+                    form.submit();
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

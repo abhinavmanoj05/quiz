@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Answer the Quiz</h1>
+    <form method="post">
+        <form method="post">
+            <div>
+                <label>Question {{ qnum+1 }} of {{ total }}</label><br>
+                <strong>{{ question.question }}</strong><br>
+                {% for opt in question.options %}
+                    <input type="radio" name="answer" value="{{ loop.index }}" {% if answer == loop.index|string %}checked{% endif %} required>
+                    <label>{{ opt }}</label><br>
+                {% endfor %}
+            </div>
+            <div style="margin-top:20px;">
+                {% if not is_first %}
+                    <button type="submit" name="prev">Previous</button>
+                {% endif %}
+                {% if not is_last %}
+                    <button type="submit" name="next">Next</button>
+                {% else %}
+                    <button type="submit" name="submit">Submit Answers</button>
+                {% endif %}
+            </div>
+        </form>
+    </form>
+</body>
+</html>

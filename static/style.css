@@ -1,0 +1,76 @@
+
+body {
+	font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(135deg, #0f2027, #2c5364);
+	color: #e0e0e0;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	color: #00fff7;
+	text-align: center;
+	margin-top: 30px;
+	letter-spacing: 2px;
+	text-shadow: 0 0 8px #00fff7, 0 0 2px #222;
+}
+form {
+	max-width: 600px;
+	margin: 30px auto;
+	background: rgba(20, 40, 60, 0.95);
+	padding: 24px;
+	border-radius: 16px;
+	box-shadow: 0 4px 24px #00fff7a0, 0 2px 8px #222a;
+	border: 1px solid #00fff7;
+}
+textarea, input[type=text], input[type=radio] {
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 6px;
+	border: 1px solid #00fff7;
+	background: #1a2a3a;
+	color: #e0e0e0;
+	font-size: 1em;
+}
+input[type=radio] {
+	width: auto;
+	accent-color: #00fff7;
+}
+button {
+	background: linear-gradient(90deg, #00fff7 0%, #007bff 100%);
+	color: #222;
+	border: none;
+	padding: 12px 28px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+	box-shadow: 0 0 8px #00fff7a0;
+	transition: background 0.2s, color 0.2s;
+}
+button:hover {
+	background: linear-gradient(90deg, #007bff 0%, #00fff7 100%);
+	color: #fff;
+}
+.summary-box {
+	background: rgba(20, 40, 60, 0.98);
+	border: 2px solid #00fff7;
+	border-radius: 16px;
+	box-shadow: 0 0 24px #00fff7a0;
+	padding: 24px;
+	margin: 30px auto;
+	max-width: 600px;
+	color: #e0e0e0;
+	font-size: 1.15em;
+}
+.score {
+	font-size: 2em;
+	color: #00fff7;
+	text-shadow: 0 0 8px #00fff7, 0 0 2px #222;
+	margin-bottom: 12px;
+}
+.suggestions {
+	margin-top: 18px;
+	color: #fff;
+	font-style: italic;
+}

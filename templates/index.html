@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Quiz Generator</h1>
+    <form method="post">
+        <label for="topic">Topic:</label>
+        <input type="text" name="topic" id="topic" placeholder="Enter topic (e.g. Physics, History)" required><br><br>
+        <label for="difficulty">Difficulty:</label>
+        <select name="difficulty" id="difficulty" required>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select><br><br>
+        <textarea name="extract" rows="8" cols="60" placeholder="Paste your text or paragraph here..."></textarea><br>
+        <button type="submit">Generate Quiz</button>
+    </form>
+</body>
+</html>

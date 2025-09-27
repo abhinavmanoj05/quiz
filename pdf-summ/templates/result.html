@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Your Result</h1>
+    {% set lines = result.split('\n') %}
+    <div class="summary-box">
+        <div class="score">{{ lines[0] }}</div>
+        <div>
+            {% for l in lines[1:lines|length-2] %}
+                <div>{{ l }}</div>
+            {% endfor %}
+        </div>
+        <div class="suggestions">
+            <strong>Suggestions:</strong><br>
+            {{ lines[-1] }}
+        </div>
+    </div>
+    <form action="/" method="get">
+        <button type="submit">Back to Home</button>
+    </form>
+</body>
+</html>
